@@ -50,9 +50,8 @@ window.renderStatistics = function (ctx, names, times) {
     var barTopY = 70 + bar.maxHeight * (1 - times[i] / maxTime);
     var barHeight = bar.maxHeight * times[i] / maxTime;
 
-    if (names[i] === 'Вы') {
-      var barFill = 'rgb(255, 0, 0)';
-    } else {
+    var barFill = 'rgb(255, 0, 0)';
+    if (names[i] !== 'Вы') {
       barFill = 'rgba(0, 0, 255, ' + Math.random() + ')';
     }
     renderRect(ctx, {left: barLeftX, top: barTopY, width: bar.width, height: barHeight}, barFill);
